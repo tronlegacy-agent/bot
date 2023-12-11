@@ -1,4 +1,4 @@
-import firebase_admin ,requests,make_response, jsonify
+import firebase_admin ,requests
 
 import requests
 from bs4 import BeautifulSoup
@@ -9,7 +9,7 @@ firebase_admin.initialize_app(cred)
 
 from bs4 import BeautifulSoup
 
-from flask import Flask, render_template,request
+from flask import Flask, render_template,request,make_response, jsonify
 
 from datetime import datetime
 
