@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    homepage = "<h1>梅祐銘Python網頁<br>2023/12/11</h1>"
+    homepage = "<h1>梅祐銘Python網頁<br>2023/12/11a</h1>"
     homepage += "<a href=/mis>MIS</a><br>"
     homepage += "<a href=/today>顯示日期時間</a><br>"
     homepage += "<a href=/welcome?nick=tcyang>傳送使用者暱稱</a><br>"
@@ -172,6 +172,20 @@ def webhook():
     msg =  req.get("queryResult").get("queryText")
     info = "動作：" + action + "； 查詢內容：" + msg
     return make_response(jsonify({"fulfillmentText": info}))
+
+@app.route("/webhook2", methods=["POST"])
+def webhook2():
+    # build a request object
+    req = request.get_json(force=True)
+    # fetch queryResult from json
+    action =  req.get("queryResult").get("action")
+    #msg =  req.get("queryResult").get("queryText")
+    #info = "動作：" + action + "； 查詢內容：" + msg
+    if (action == "rateChoice"):
+        rate =  req.get("queryResult").get("parameters").get("rate")
+        info = "您選擇的電影分級是：" + rate
+    return make_response(jsonify({"fulfillmentText": info}))
+
 
 
 @app.route("/movie_rate")
