@@ -17,29 +17,18 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-
-	homepage = "<h1>梅祐銘Python網頁<br>2023/11/30</h1>"
-
-	homepage += "<a href=/mis>MIS</a><br>"
-
-	homepage += "<a href=/today>顯示日期時間</a><br>"
-
-	homepage += "<a href=/welcome?nick=tcyang>傳送使用者暱稱</a><br>"
-
-	homepage += "<a href=/about>子青簡介網頁</a><br>"
-
-	homepage +=  "<a href=/account>網頁表單</a>"
-
-	homepage += "</br><a href=/wave>演員名單(年齡由小到大)</a>"
-
-	homepage += "</br><a href=/spider>網路爬蟲</a>"
-	
-	homepage += "<br><a href=/movie>讀取開眼電影即將上映影片，寫入Firestore</a><br>"
-     
-	homepage += "<br><a href=/searchQ>即將上映電影查詢</a><br>"
-
-
-	return homepage
+    homepage = "<h1>梅祐銘Python網頁<br>2023/11/30</h1>"
+    homepage += "<a href=/mis>MIS</a><br>"
+    homepage += "<a href=/today>顯示日期時間</a><br>"
+    homepage += "<a href=/welcome?nick=tcyang>傳送使用者暱稱</a><br>"
+    homepage += "<a href=/about>子青簡介網頁</a><br>"
+    homepage += "<a href=/account>網頁表單</a>"
+    homepage += "</br><a href=/wave>演員名單(年齡由小到大)</a>"
+    homepage += "</br><a href=/spider>網路爬蟲</a>"
+    homepage += "<br><a href=/movie>讀取開眼電影即將上映影片，寫入Firestore</a><br>"
+    homepage += "<br><a href=/searchQ>即將上映電影查詢</a><br>"
+    homepage += "<br><a href=/movie_rate>讀取開眼電影即將上映影片(含分級)</a><br>"
+    return homepage
 
 
 
